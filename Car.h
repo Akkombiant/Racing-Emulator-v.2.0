@@ -1,40 +1,24 @@
 #ifndef CAR_H
 #define CAR_H
 #include "namespaceConst.h"
-#include "Game.h"
 
 using namespace GlobalVaria;
 
 
-class Car : public Game
+class Car
 {
 public:
-	int y, x;
-
 	Car();
 
+	void createCar();
 
+	void turnLeft();
 
-	void createCar (char map[maxCoordY][maxCoordX]);
+	void turnRight();
 
+	void control();
 
-
-	void turnLeft (char map[maxCoordY][maxCoordX]);
-
-
-
-	void turnRight (char map[maxCoordY][maxCoordX]);
-
-
-
-protected:
-	int defaultSpeed;
-	char map[maxCoordY][maxCoordX], obs;
+	~Car() {}
 };
-
-
-
-
-
 
 #endif

@@ -4,17 +4,10 @@
 
 using namespace GlobalVaria;
 
-
-
 extern int y, x, scoreCoordY, scoreCoordX, obstacleCoordY, obstacleCoordX;
 extern int ncashcheck, ndistance, ncashpickedup;
 extern int defaultSpeed;
 extern char map[maxCoordY][maxCoordX];
 extern bool isStartup;
-
-
-
-
-
 
 #endif

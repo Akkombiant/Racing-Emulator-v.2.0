@@ -2,8 +2,8 @@
 #define NAMESPACE_CONST_H
 
 
-namespace GlobalVaria {
-
+namespace GlobalVaria
+{
 	const int maxCoordY = 25;
 	const int maxCoordX = 25;
 
@@ -13,7 +13,6 @@ namespace GlobalVaria {
 
 	const int defCoordCarY = 17;
 	const int defCoordCarX = 9;
-
 }
 
 #endif

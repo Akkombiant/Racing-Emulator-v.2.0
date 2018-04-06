@@ -5,19 +5,46 @@
 #include <iostream>
 #include <Windows.h>
 #include <conio.h>
-#include <ctime>
+#include <chrono>
 #include "namespaceConst.h"
 
 using namespace GlobalVaria;
 
-
-
-
 int main()
 {	
-	Game* game;
-	game->mainAlgorithm();
+	auto start = std::chrono::high_resolution_clock::now();
+	auto stop = start;
 
-	std :: cin.get();
+	Map mapClass;
+	Car carClass;
+	Obstacles obsClass;
+
+	mapClass.createMap();
+	carClass.createCar();
+
+	while (true) {
+		mapClass.clearScreen();
+		obsClass.createObstacles();
+		//obsClass.createScores();
+
+		mapClass.loadMap();
+
+		mapClass.gameLogic();
+		carClass.control();
+
+		stop = std::chrono::high_resolution_clock::now();
+		std::cout << "\n	Distance: " 
+			<< std::chrono::duration_cast<std::chrono::seconds>(stop - start).count()
+			<< std::endl;
+
+		if (isStartup)
+		{     //does so the game starts after a key is pressed
+			_getch();
+			isStartup = false;
+		}
+		
+		Sleep(defaultSpeed);
+	}
+	_getch();
 	return 0;
 }

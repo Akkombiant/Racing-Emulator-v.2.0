@@ -1,33 +1,22 @@
 #ifndef MAP_H
 #define MAP_H
 #include "namespaceConst.h"
-#include "Game.h"
 
 using namespace GlobalVaria;
 
-class Map : public Game
+class Map
 {
 public:
-	
 	Map();
 
+	void createMap();
 
-
-	void createMap(char map[maxCoordY][maxCoordX]);
-
-
-
-	void loadMap(char map[maxCoordY][maxCoordX]);
-
-
+	void loadMap();
 
 	void clearScreen(); //used to prevent flicker
 
-protected: 
-	int y, x, ncashcheck, ndistance, ncashpickedup;
-	char map[maxCoordY][maxCoordX];
+	void gameLogic();
+
+	~Map() {}
 };
-
-
-
 #endif
